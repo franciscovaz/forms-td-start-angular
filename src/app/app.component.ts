@@ -15,6 +15,7 @@ export class AppComponent {
 
   answer: string = '';
   genders: string[] = ['male', 'female'];
+
   user = {
     username: '',
     email: '',
@@ -22,7 +23,15 @@ export class AppComponent {
     answer: '',
     gender: ''
   }
+
+  subscriptionInfo = {
+    email2: '',
+    subscription: '',
+    password: ''
+  };
+
   submitted: boolean = false;
+  submitted2: boolean = false;
 
   suggestUserName() {
     const suggestedName = 'Superuser';
@@ -62,6 +71,10 @@ export class AppComponent {
   }
 
   onSubmitForm2() {
-    console.log(this.submittedForm2);
+    this.submitted2 = true;
+    this.subscriptionInfo.email2 = this.submittedForm2.value.email2;
+    this.subscriptionInfo.subscription = this.submittedForm2.value.subscription;
+    this.subscriptionInfo.password = this.submittedForm2.value.password;
+
   }
 }

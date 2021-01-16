@@ -77,9 +77,26 @@
             <option value="Pro">Pro</option>
           </select>
         </div>
-        <button class="btn btn-success">Submit2
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" name="password" required ngModel #password="ngModel"
+            required>
+        </div>
+        <span class="help-block" *ngIf="!password.valid && password.touched">
+          Password is required!
+        </span>
+        <button class="btn btn-success" [disabled]="!f2.valid">Submit2
         </button>
       </form>
+      <span class="block-help" *ngIf="!f2.valid && f2.touched">Form invalid!</span>
     </div>
+  </div>
+
+  <div class="col-xs-12" *ngIf="submitted2">
+    <h3>Subscription Data</h3>
+    <p>Email: {{ subscriptionInfo.email2 }}</p>
+    <p>Subscription Plan: {{ subscriptionInfo.subscription }}</p>
+    <p>Password: {{ subscriptionInfo.password }}</p>
   </div>
 </div>
