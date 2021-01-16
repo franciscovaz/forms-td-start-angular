@@ -11,6 +11,8 @@ export class AppComponent {
   @ViewChild('f2') submittedForm2: NgForm;
 
   defaultQuestion: string = 'teacher';
+  defaultSubscription: string = "Advanced";
+
   answer: string = '';
   genders: string[] = ['male', 'female'];
   user = {
